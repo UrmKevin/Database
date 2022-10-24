@@ -43,7 +43,7 @@
             this.Lisa_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Lisa_kat_lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Kustuta_Kat_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             // Toode_pbx
             // 
-            this.Toode_pbx.Location = new System.Drawing.Point(334, 24);
+            this.Toode_pbx.Location = new System.Drawing.Point(334, 25);
             this.Toode_pbx.Name = "Toode_pbx";
             this.Toode_pbx.Size = new System.Drawing.Size(186, 186);
             this.Toode_pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -173,6 +173,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(620, 217);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // Lisa_kat_lbl
             // 
@@ -188,24 +189,26 @@
             this.Lisa_kat_lbl.MouseEnter += new System.EventHandler(this.Lisa_kat_lbl_MouseEnter);
             this.Lisa_kat_lbl.MouseLeave += new System.EventHandler(this.Lisa_kat_lbl_MouseLeave);
             // 
-            // label1
+            // Kustuta_Kat_lbl
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(13, 143);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 21);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "-";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.Kustuta_Kat_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Kustuta_Kat_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.Kustuta_Kat_lbl.Location = new System.Drawing.Point(13, 143);
+            this.Kustuta_Kat_lbl.Name = "Kustuta_Kat_lbl";
+            this.Kustuta_Kat_lbl.Size = new System.Drawing.Size(21, 21);
+            this.Kustuta_Kat_lbl.TabIndex = 16;
+            this.Kustuta_Kat_lbl.Text = "-";
+            this.Kustuta_Kat_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Kustuta_Kat_lbl.Click += new System.EventHandler(this.Kustuta_Kat_lbl_Click);
+            this.Kustuta_Kat_lbl.MouseEnter += new System.EventHandler(this.Kustuta_Kat_lbl_MouseEnter);
+            this.Kustuta_Kat_lbl.MouseLeave += new System.EventHandler(this.Kustuta_Kat_lbl_MouseLeave);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 517);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Kustuta_Kat_lbl);
             this.Controls.Add(this.Lisa_kat_lbl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Lisa_btn);
@@ -247,7 +250,7 @@
         private System.Windows.Forms.Button Lisa_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Lisa_kat_lbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Kustuta_Kat_lbl;
     }
 }
 

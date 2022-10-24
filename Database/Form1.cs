@@ -105,6 +105,36 @@ namespace Database
                 MessageBox.Show("Fill fields");
             }
         }
+        private void Uuenda_btn_Click(object sender, EventArgs e) // not ready
+        {
+            if (Toode_txt.Text.Trim() != string.Empty && Kogus_txt.Text.Trim() != string.Empty && Hind_txt.Text.Trim() != string.Empty && Kat_cbx.SelectedItem != null)
+            {
+                try
+                {
+                    cmd = new SqlCommand("UPDATE Toodetable SET (Toodenimetus,Kogus,Hind,Pilt,Kategooria_Id) VALUES (@toode,@kogus,@hind,@pilt,@kat)", connect);
+                    connect.Open();
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
+                    cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
+                    cmd.Parameters.AddWithValue("@hind", Hind_txt.Text.Replace(",", "."));//format andmebaasis ja vormis võrtsed(sarnased)
+                    cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + ".jpg");//format?
+                    cmd.Parameters.AddWithValue("@kat", Kat_cbx.SelectedIndex + 1);//Id andmebaasist võtta
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                    Kustuta_Andmed();
+                    Naita_Andmed();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Andmebaasiga viga!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Fill fields");
+            }
+        }
         private void Kustuta_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -127,7 +157,7 @@ namespace Database
                 connect.Close();
             }
         }
-        private void label1_Click(object sender, EventArgs e)
+        private void Kustuta_Kat_lbl_Click(object sender, EventArgs e) // kustuta kategooria
         {
             connect.Open();
             if (Kat_cbx.Text == "") return;
@@ -143,15 +173,12 @@ namespace Database
             Kustuta_Andmed();
             Naita_Kat();
         }
-        private void Lisa_kat_lbl_MouseEnter(object sender, EventArgs e)
-        {
-            Lisa_kat_lbl.ForeColor = Color.White;
-            Lisa_kat_lbl.BackColor = Color.Gray;
-        }
-
         private void KogusPic_btn_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = Path.GetFullPath(@"C:\Users\opilane\Pictures");
+            ofd.Filter = "Images|*.png;*.jpg";
+            FileInfo open_info = new FileInfo(Path.GetFullPath(@"C:\Users\opilane\source\repos\TARpv21_Urm\Database\Database\Images" + ofd.FileName));
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 Toode_pbx.Load(ofd.FileName);
@@ -159,25 +186,64 @@ namespace Database
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Images|*.png;*.jpg";
             sfd.Title = "Salvesta pilt";
-            sfd.FileName = ".png";
+            sfd.FileName = Toode_txt.Text + open_info.Extension;
+            sfd.InitialDirectory = Path.GetFullPath(@"C:\Users\opilane\source\repos\TARpv21_Urm\Database\Database\Images");
             ImageFormat format = ImageFormat.Png;
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                string ext = Path.GetExtension(sfd.FileName);
-                switch (ext)
-                {
-                    case ".jpg":
-                        format = ImageFormat.Jpeg;
-                        break;
-                }
-                Toode_pbx.Image.Save(sfd.FileName, format);
+                File.Copy(ofd.FileName, sfd.FileName);
+                sfd.RestoreDirectory = true;
+                Toode_pbx.Image = Image.FromFile(sfd.FileName);
+                //string ext = Path.GetExtension(sfd.FileName);
+                //switch (ext)
+                //{
+                //    case ".jpg":
+                //        format = ImageFormat.Jpeg;
+                //        break;
+                //}
+                //Toode_pbx.Image.Save(sfd.FileName, format);
             }
+        } //otsi pilt
+        int Id;
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Id = (int)(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            Toode_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Kogus_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            Hind_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            try
+            {
+                Toode_pbx.Image = Image.FromFile(@"..\..\Images\" + dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+            }
+            catch (Exception)
+            {
+                Toode_pbx.Image = Image.FromFile(@"..\..\Images\about.png");
+                MessageBox.Show("Fail puudub");
+            }
+            string v = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            Kat_cbx.SelectedIndex = Int32.Parse(v) -1;
         }
-
+        private void Lisa_kat_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            Lisa_kat_lbl.ForeColor = Color.White;
+            Lisa_kat_lbl.BackColor = Color.Gray;
+        }// + colors
         private void Lisa_kat_lbl_MouseLeave(object sender, EventArgs e)
         {
             Lisa_kat_lbl.ForeColor = Color.Black;
             Lisa_kat_lbl.BackColor = Color.White;
-        }
+        }// + colors
+        private void Kustuta_Kat_lbl_MouseLeave(object sender, EventArgs e)
+        {
+            Kustuta_Kat_lbl.ForeColor = Color.Black;
+            Kustuta_Kat_lbl.BackColor = Color.White;
+        }// - colors
+
+
+        private void Kustuta_Kat_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            Kustuta_Kat_lbl.ForeColor = Color.White;
+            Kustuta_Kat_lbl.BackColor = Color.Gray;
+        }// - colors
     }
 }
