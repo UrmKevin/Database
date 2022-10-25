@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.Toode_txt = new System.Windows.Forms.TextBox();
-            this.Hind_txt = new System.Windows.Forms.TextBox();
-            this.Kogus_txt = new System.Windows.Forms.TextBox();
             this.Toode_lbl = new System.Windows.Forms.Label();
             this.Hind_lbl = new System.Windows.Forms.Label();
             this.Kogus_lbl = new System.Windows.Forms.Label();
@@ -44,8 +42,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Lisa_kat_lbl = new System.Windows.Forms.Label();
             this.Kustuta_Kat_lbl = new System.Windows.Forms.Label();
+            this.Kogus_txt = new System.Windows.Forms.NumericUpDown();
+            this.Hind_txt = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kogus_txt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hind_txt)).BeginInit();
             this.SuspendLayout();
             // 
             // Toode_txt
@@ -54,20 +56,6 @@
             this.Toode_txt.Name = "Toode_txt";
             this.Toode_txt.Size = new System.Drawing.Size(152, 20);
             this.Toode_txt.TabIndex = 0;
-            // 
-            // Hind_txt
-            // 
-            this.Hind_txt.Location = new System.Drawing.Point(150, 110);
-            this.Hind_txt.Name = "Hind_txt";
-            this.Hind_txt.Size = new System.Drawing.Size(152, 20);
-            this.Hind_txt.TabIndex = 1;
-            // 
-            // Kogus_txt
-            // 
-            this.Kogus_txt.Location = new System.Drawing.Point(150, 75);
-            this.Kogus_txt.Name = "Kogus_txt";
-            this.Kogus_txt.Size = new System.Drawing.Size(152, 20);
-            this.Kogus_txt.TabIndex = 2;
             // 
             // Toode_lbl
             // 
@@ -203,11 +191,28 @@
             this.Kustuta_Kat_lbl.MouseEnter += new System.EventHandler(this.Kustuta_Kat_lbl_MouseEnter);
             this.Kustuta_Kat_lbl.MouseLeave += new System.EventHandler(this.Kustuta_Kat_lbl_MouseLeave);
             // 
+            // Kogus_txt
+            // 
+            this.Kogus_txt.Location = new System.Drawing.Point(150, 77);
+            this.Kogus_txt.Name = "Kogus_txt";
+            this.Kogus_txt.Size = new System.Drawing.Size(152, 20);
+            this.Kogus_txt.TabIndex = 17;
+            // 
+            // Hind_txt
+            // 
+            this.Hind_txt.DecimalPlaces = 2;
+            this.Hind_txt.Location = new System.Drawing.Point(150, 112);
+            this.Hind_txt.Name = "Hind_txt";
+            this.Hind_txt.Size = new System.Drawing.Size(152, 20);
+            this.Hind_txt.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 517);
+            this.Controls.Add(this.Hind_txt);
+            this.Controls.Add(this.Kogus_txt);
             this.Controls.Add(this.Kustuta_Kat_lbl);
             this.Controls.Add(this.Lisa_kat_lbl);
             this.Controls.Add(this.dataGridView1);
@@ -221,13 +226,13 @@
             this.Controls.Add(this.Kogus_lbl);
             this.Controls.Add(this.Hind_lbl);
             this.Controls.Add(this.Toode_lbl);
-            this.Controls.Add(this.Kogus_txt);
-            this.Controls.Add(this.Hind_txt);
             this.Controls.Add(this.Toode_txt);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kogus_txt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Hind_txt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,8 +241,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox Toode_txt;
-        private System.Windows.Forms.TextBox Hind_txt;
-        private System.Windows.Forms.TextBox Kogus_txt;
         private System.Windows.Forms.Label Toode_lbl;
         private System.Windows.Forms.Label Hind_lbl;
         private System.Windows.Forms.Label Kogus_lbl;
@@ -251,6 +254,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Lisa_kat_lbl;
         private System.Windows.Forms.Label Kustuta_Kat_lbl;
+        private System.Windows.Forms.NumericUpDown Kogus_txt;
+        private System.Windows.Forms.NumericUpDown Hind_txt;
     }
 }
 

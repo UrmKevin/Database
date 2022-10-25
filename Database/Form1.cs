@@ -78,15 +78,15 @@ namespace Database
         }
         private void Lisa_Andmed(object sender, EventArgs e)
         {
-            if (Toode_txt.Text.Trim() != string.Empty && Kogus_txt.Text.Trim() != string.Empty && Hind_txt.Text.Trim() != string.Empty && Kat_cbx.SelectedItem != null)
+            if (Toode_txt.Text.Trim() != string.Empty && Kogus_txt.Text.Trim() != string.Empty && Hind_txt.Text.Trim() != string.Empty && Kat_cbx.SelectedItem != null)// && (string)Toode_pbx.Tag == "about.png")
             {
                 try
                 {
                     cmd = new SqlCommand("INSERT INTO Toodetable (Toodenimetus,Kogus,Hind,Pilt,Kategooria_Id) VALUES (@toode,@kogus,@hind,@pilt,@kat)", connect);
                     connect.Open();
                     cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
-                    cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
-                    cmd.Parameters.AddWithValue("@hind", Hind_txt.Text);//format andmebaasis ja vormis võrtsed(sarnased)
+                    cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Value);
+                    cmd.Parameters.AddWithValue("@hind", Hind_txt.Value);//format andmebaasis ja vormis võrtsed(sarnased)
                     cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + ".jpg");//format?
                     cmd.Parameters.AddWithValue("@kat", Kat_cbx.SelectedIndex + 1);//Id andmebaasist võtta
                     cmd.ExecuteNonQuery();
@@ -96,43 +96,35 @@ namespace Database
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Andmebaasiga viga!");
                 }
             }
             else
             {
-                MessageBox.Show("Fill fields");
+                MessageBox.Show("Viga");
             }
         }
         private void Uuenda_btn_Click(object sender, EventArgs e) // not ready
         {
-            if (Toode_txt.Text.Trim() != string.Empty && Kogus_txt.Text.Trim() != string.Empty && Hind_txt.Text.Trim() != string.Empty && Kat_cbx.SelectedItem != null)
+            if (Toode_txt.Text != "" && Kogus_txt.Text != "" && Hind_txt.Text != "" && Toode_pbx.Image != null)
             {
-                try
-                {
-                    cmd = new SqlCommand("UPDATE Toodetable SET (Toodenimetus,Kogus,Hind,Pilt,Kategooria_Id) VALUES (@toode,@kogus,@hind,@pilt,@kat)", connect);
-                    connect.Open();
-                    cmd.Parameters.AddWithValue("@id", Id);
-                    cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
-                    cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
-                    cmd.Parameters.AddWithValue("@hind", Hind_txt.Text.Replace(",", "."));//format andmebaasis ja vormis võrtsed(sarnased)
-                    cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + ".jpg");//format?
-                    cmd.Parameters.AddWithValue("@kat", Kat_cbx.SelectedIndex + 1);//Id andmebaasist võtta
-                    cmd.ExecuteNonQuery();
-                    connect.Close();
-                    Kustuta_Andmed();
-                    Naita_Andmed();
-                }
-                catch (Exception)
-                {
-
-                    MessageBox.Show("Andmebaasiga viga!");
-                }
+                cmd = new SqlCommand("UPDATE Toodetable SET Toodenimetus=@toode,Kogus=@kogus,Hind=@hind, Pilt=@pilt WHERE Id=@id", connect);
+                connect.Open();
+                cmd.Parameters.AddWithValue("@id", Id);
+                cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
+                cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
+                cmd.Parameters.AddWithValue("@hind", Hind_txt.Text.Replace(",", "."));
+                string file_pilt = Toode_txt.Text + ".jpg";
+                cmd.Parameters.AddWithValue("@pilt", file_pilt);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+                Naita_Andmed();
+                Kustuta_Andmed();
+                MessageBox.Show("Andmed uuendatud");
             }
             else
             {
-                MessageBox.Show("Fill fields");
+                MessageBox.Show("Viga");
             }
         }
         private void Kustuta_Click(object sender, EventArgs e)
@@ -218,11 +210,12 @@ namespace Database
             catch (Exception)
             {
                 Toode_pbx.Image = Image.FromFile(@"..\..\Images\about.png");
-                MessageBox.Show("Fail puudub");
+                //MessageBox.Show("Fail puudub");
             }
             string v = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
             Kat_cbx.SelectedIndex = Int32.Parse(v) -1;
         }
+
         private void Lisa_kat_lbl_MouseEnter(object sender, EventArgs e)
         {
             Lisa_kat_lbl.ForeColor = Color.White;
@@ -238,8 +231,6 @@ namespace Database
             Kustuta_Kat_lbl.ForeColor = Color.Black;
             Kustuta_Kat_lbl.BackColor = Color.White;
         }// - colors
-
-
         private void Kustuta_Kat_lbl_MouseEnter(object sender, EventArgs e)
         {
             Kustuta_Kat_lbl.ForeColor = Color.White;
