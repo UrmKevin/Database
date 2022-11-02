@@ -87,7 +87,7 @@ namespace Database
                     cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
                     cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Value);
                     cmd.Parameters.AddWithValue("@hind", Hind_txt.Value);//format andmebaasis ja vormis võrtsed(sarnased)
-                    cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + ".jpg");//format?
+                    cmd.Parameters.AddWithValue("@pilt", Toode_txt.Text + ".png");//format?
                     cmd.Parameters.AddWithValue("@kat", Kat_cbx.SelectedIndex + 1);//Id andmebaasist võtta
                     cmd.ExecuteNonQuery();
                     connect.Close();
@@ -112,8 +112,8 @@ namespace Database
                 connect.Open();
                 cmd.Parameters.AddWithValue("@id", Id);
                 cmd.Parameters.AddWithValue("@toode", Toode_txt.Text);
-                cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Text);
-                cmd.Parameters.AddWithValue("@hind", Hind_txt.Text.Replace(",", "."));
+                cmd.Parameters.AddWithValue("@kogus", Kogus_txt.Value);
+                cmd.Parameters.AddWithValue("@hind", Hind_txt.Value.ToString().Replace(",", "."));
                 string file_pilt = Toode_txt.Text + ".jpg";
                 cmd.Parameters.AddWithValue("@pilt", file_pilt);
                 cmd.ExecuteNonQuery();

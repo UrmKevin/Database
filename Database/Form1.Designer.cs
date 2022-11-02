@@ -52,7 +52,7 @@
             // 
             // Toode_txt
             // 
-            this.Toode_txt.Location = new System.Drawing.Point(150, 39);
+            this.Toode_txt.Location = new System.Drawing.Point(150, 48);
             this.Toode_txt.Name = "Toode_txt";
             this.Toode_txt.Size = new System.Drawing.Size(152, 20);
             this.Toode_txt.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             this.Toode_lbl.AutoSize = true;
             this.Toode_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Toode_lbl.Location = new System.Drawing.Point(37, 38);
+            this.Toode_lbl.Location = new System.Drawing.Point(37, 47);
             this.Toode_lbl.Name = "Toode_lbl";
             this.Toode_lbl.Size = new System.Drawing.Size(107, 18);
             this.Toode_lbl.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             this.Hind_lbl.AutoSize = true;
             this.Hind_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Hind_lbl.Location = new System.Drawing.Point(106, 110);
+            this.Hind_lbl.Location = new System.Drawing.Point(106, 119);
             this.Hind_lbl.Name = "Hind_lbl";
             this.Hind_lbl.Size = new System.Drawing.Size(38, 18);
             this.Hind_lbl.TabIndex = 4;
@@ -81,7 +81,7 @@
             // 
             this.Kogus_lbl.AutoSize = true;
             this.Kogus_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Kogus_lbl.Location = new System.Drawing.Point(93, 75);
+            this.Kogus_lbl.Location = new System.Drawing.Point(93, 84);
             this.Kogus_lbl.Name = "Kogus_lbl";
             this.Kogus_lbl.Size = new System.Drawing.Size(51, 18);
             this.Kogus_lbl.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.Kategooria_lbl.AutoSize = true;
             this.Kategooria_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Kategooria_lbl.Location = new System.Drawing.Point(64, 144);
+            this.Kategooria_lbl.Location = new System.Drawing.Point(64, 153);
             this.Kategooria_lbl.Name = "Kategooria_lbl";
             this.Kategooria_lbl.Size = new System.Drawing.Size(80, 18);
             this.Kategooria_lbl.TabIndex = 6;
@@ -100,7 +100,7 @@
             // Kat_cbx
             // 
             this.Kat_cbx.FormattingEnabled = true;
-            this.Kat_cbx.Location = new System.Drawing.Point(150, 143);
+            this.Kat_cbx.Location = new System.Drawing.Point(150, 152);
             this.Kat_cbx.Name = "Kat_cbx";
             this.Kat_cbx.Size = new System.Drawing.Size(152, 21);
             this.Kat_cbx.TabIndex = 7;
@@ -167,7 +167,7 @@
             // 
             this.Lisa_kat_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Lisa_kat_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Lisa_kat_lbl.Location = new System.Drawing.Point(40, 143);
+            this.Lisa_kat_lbl.Location = new System.Drawing.Point(40, 152);
             this.Lisa_kat_lbl.Name = "Lisa_kat_lbl";
             this.Lisa_kat_lbl.Size = new System.Drawing.Size(21, 21);
             this.Lisa_kat_lbl.TabIndex = 15;
@@ -181,7 +181,7 @@
             // 
             this.Kustuta_Kat_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Kustuta_Kat_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Kustuta_Kat_lbl.Location = new System.Drawing.Point(13, 143);
+            this.Kustuta_Kat_lbl.Location = new System.Drawing.Point(13, 152);
             this.Kustuta_Kat_lbl.Name = "Kustuta_Kat_lbl";
             this.Kustuta_Kat_lbl.Size = new System.Drawing.Size(21, 21);
             this.Kustuta_Kat_lbl.TabIndex = 16;
@@ -193,7 +193,7 @@
             // 
             // Kogus_txt
             // 
-            this.Kogus_txt.Location = new System.Drawing.Point(150, 77);
+            this.Kogus_txt.Location = new System.Drawing.Point(150, 86);
             this.Kogus_txt.Name = "Kogus_txt";
             this.Kogus_txt.Size = new System.Drawing.Size(152, 20);
             this.Kogus_txt.TabIndex = 17;
@@ -201,7 +201,7 @@
             // Hind_txt
             // 
             this.Hind_txt.DecimalPlaces = 2;
-            this.Hind_txt.Location = new System.Drawing.Point(150, 112);
+            this.Hind_txt.Location = new System.Drawing.Point(150, 121);
             this.Hind_txt.Name = "Hind_txt";
             this.Hind_txt.Size = new System.Drawing.Size(152, 20);
             this.Hind_txt.TabIndex = 18;
