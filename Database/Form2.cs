@@ -21,6 +21,8 @@ namespace Database
         SqlCommand cmd;
         SqlDataAdapter adapter, adapter_kat;
         List<string> Tooded_list = new List<string>();
+        string tooded = "";
+        double total = 0;
         public Form2()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Database
             connect.Open();
 
             DataTable dt_toodes = new DataTable();
-            adapter = new SqlDataAdapter("SELECT * FROM Toodetable", connect);
+            adapter = new SqlDataAdapter("SELECT Id,Toodenimetus,Kogus,Hind FROM Toodetable", connect);
             adapter.Fill(dt_toodes);
             dataGridView1.DataSource = dt_toodes;
             connect.Close();
@@ -67,6 +69,7 @@ namespace Database
             Id = (int)(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             Toode_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             Kogus_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            Kogus_txt.Value = 1;
             Hind_txt.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             try
             {
@@ -77,23 +80,78 @@ namespace Database
                 Toode_pbx.Image = System.Drawing.Image.FromFile(@"..\..\Images\about.png");
                 //MessageBox.Show("Fail puudub");
             }
-            string v = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            Kat_cbx.SelectedIndex = Int32.Parse(v) - 1;
         }
         Document document;
-        private void Lisa_Click(object sender, EventArgs e)
+        private void Osta_btn_Click(object sender, EventArgs e)
         {
             document = new Document();
             var page = document.Pages.Add();
-            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(". . ."));
+            page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("ARVE\n\nKoguhind: " + total.ToString() + "€\n"));
             foreach (var toode in Tooded_list)
             {
                 page.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment(toode));
             }
-
+            tooded = "";
+            total = 0;
+            KõikHind_lbl.Text = "";
+            Korv_lbx.Items.Clear();
+            values.Clear();
+            korv.Clear();
             document.Save(@"..\..\Arved\Arve_.pdf");
             document.Dispose();
         }
+        List<string> korv = new List<string>();
+        List<string> values = new List<string>();
+        private void Lisa_btn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.CurrentCell.OwningRow;
+            string value = row.Cells["Kogus"].Value.ToString();
+            int val = Int32.Parse(value);
+            int valinud = Int32.Parse(Kogus_txt.Text);
+            if (valinud <= val)
+            {
+                cmd = new SqlCommand("UPDATE Toodetable SET Kogus=@kogus WHERE Id=@id", connect);
+
+                connect.Open();
+                cmd.Parameters.AddWithValue("@kogus", val - Int32.Parse(Kogus_txt.Text));
+                cmd.Parameters.AddWithValue("@id", Id);
+                cmd.ExecuteNonQuery();
+                connect.Close();
+
+                values.Add(Toode_txt.Text.ToString());
+                values.Add(Kogus_txt.Text.ToString());
+                values.Add(Hind_txt.Text.ToString());
+                values.Add(Kat_cbx.Text.ToString());
+                for (int i = 0; i < 4; i++)
+                {
+                    string string1 = values[i];
+                    korv.Add(string1);
+                }
+                if (Toode_txt.Text != "")
+                {
+                    int kogus = Int32.Parse(korv[1]);
+                    double hind = Convert.ToDouble(korv[2]);
+                    double summ = hind * kogus;
+                    total += summ;
+                    tooded = $"{korv[0]}: {korv[1]} - {summ}€";
+                    KõikHind_lbl.Text = total.ToString();
+                    Korv_lbx.Items.Add(tooded);
+                    Tooded_list.Add(tooded);
+                    values.Clear();
+                    korv.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("valida toode");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Meil pole nii palju toodet");
+            }
+            
+        }
+
         private void Arve_btn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Siin on sinu arve");

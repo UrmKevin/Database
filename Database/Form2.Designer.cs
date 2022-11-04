@@ -31,7 +31,7 @@
             this.Arve_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Toode_pbx = new System.Windows.Forms.PictureBox();
-            this.Toode_lbl = new System.Windows.Forms.Label();
+            this.KõikHind_lbl = new System.Windows.Forms.Label();
             this.Kogus_txt = new System.Windows.Forms.NumericUpDown();
             this.Kat_cbx = new System.Windows.Forms.ComboBox();
             this.Kategooria_lbl = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Lisa_btn = new System.Windows.Forms.Button();
             this.Osta_btn = new System.Windows.Forms.Button();
+            this.Korv_lbx = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Kogus_txt)).BeginInit();
@@ -79,23 +80,23 @@
             // 
             this.Toode_pbx.BackColor = System.Drawing.Color.White;
             this.Toode_pbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Toode_pbx.Location = new System.Drawing.Point(356, 24);
+            this.Toode_pbx.Location = new System.Drawing.Point(351, 24);
             this.Toode_pbx.Name = "Toode_pbx";
-            this.Toode_pbx.Size = new System.Drawing.Size(213, 213);
+            this.Toode_pbx.Size = new System.Drawing.Size(218, 218);
             this.Toode_pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Toode_pbx.TabIndex = 25;
             this.Toode_pbx.TabStop = false;
             // 
             // Toode_lbl
             // 
-            this.Toode_lbl.BackColor = System.Drawing.Color.White;
-            this.Toode_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Toode_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.Toode_lbl.Location = new System.Drawing.Point(575, 51);
-            this.Toode_lbl.Name = "Toode_lbl";
-            this.Toode_lbl.Size = new System.Drawing.Size(209, 186);
-            this.Toode_lbl.TabIndex = 33;
-            this.Toode_lbl.Text = "Mitte midagi...";
+            this.KõikHind_lbl.BackColor = System.Drawing.Color.White;
+            this.KõikHind_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.KõikHind_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.KõikHind_lbl.Location = new System.Drawing.Point(575, 214);
+            this.KõikHind_lbl.Name = "Toode_lbl";
+            this.KõikHind_lbl.Size = new System.Drawing.Size(209, 28);
+            this.KõikHind_lbl.TabIndex = 33;
+            this.KõikHind_lbl.Text = "Mitte midagi...";
             // 
             // Kogus_txt
             // 
@@ -112,6 +113,7 @@
             this.Kat_cbx.Name = "Kat_cbx";
             this.Kat_cbx.Size = new System.Drawing.Size(152, 21);
             this.Kat_cbx.TabIndex = 39;
+            this.Kat_cbx.Visible = false;
             // 
             // Kategooria_lbl
             // 
@@ -122,6 +124,7 @@
             this.Kategooria_lbl.Size = new System.Drawing.Size(80, 18);
             this.Kategooria_lbl.TabIndex = 38;
             this.Kategooria_lbl.Text = "Kategooria";
+            this.Kategooria_lbl.Visible = false;
             // 
             // Kogus_lbl
             // 
@@ -192,6 +195,7 @@
             this.Lisa_btn.TabIndex = 45;
             this.Lisa_btn.Text = "Lisa korves";
             this.Lisa_btn.UseVisualStyleBackColor = true;
+            this.Lisa_btn.Click += new System.EventHandler(this.Lisa_btn_Click);
             // 
             // Osta_btn
             // 
@@ -202,12 +206,22 @@
             this.Osta_btn.TabIndex = 46;
             this.Osta_btn.Text = "Osta";
             this.Osta_btn.UseVisualStyleBackColor = true;
+            this.Osta_btn.Click += new System.EventHandler(this.Osta_btn_Click);
+            // 
+            // Korv_lbx
+            // 
+            this.Korv_lbx.FormattingEnabled = true;
+            this.Korv_lbx.Location = new System.Drawing.Point(575, 56);
+            this.Korv_lbx.Name = "Korv_lbx";
+            this.Korv_lbx.Size = new System.Drawing.Size(209, 160);
+            this.Korv_lbx.TabIndex = 47;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 567);
+            this.Controls.Add(this.Korv_lbx);
             this.Controls.Add(this.Osta_btn);
             this.Controls.Add(this.Lisa_btn);
             this.Controls.Add(this.label3);
@@ -219,7 +233,7 @@
             this.Controls.Add(this.Hind_lbl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Toode_txt);
-            this.Controls.Add(this.Toode_lbl);
+            this.Controls.Add(this.KõikHind_lbl);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Toode_pbx);
             this.Controls.Add(this.Arve_btn);
@@ -237,7 +251,7 @@
         private System.Windows.Forms.Button Arve_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox Toode_pbx;
-        private System.Windows.Forms.Label Toode_lbl;
+        private System.Windows.Forms.Label KõikHind_lbl;
         private System.Windows.Forms.NumericUpDown Kogus_txt;
         private System.Windows.Forms.ComboBox Kat_cbx;
         private System.Windows.Forms.Label Kategooria_lbl;
@@ -249,5 +263,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Lisa_btn;
         private System.Windows.Forms.Button Osta_btn;
+        private System.Windows.Forms.ListBox Korv_lbx;
     }
 }
