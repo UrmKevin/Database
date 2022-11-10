@@ -48,11 +48,11 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(450, 297);
+            this.button1.Location = new System.Drawing.Point(458, 297);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 38);
+            this.button1.Size = new System.Drawing.Size(106, 38);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Lõpusta";
+            this.button1.Text = "Registreeri";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -61,7 +61,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label1.Location = new System.Drawing.Point(126, 25);
+            this.label1.Location = new System.Drawing.Point(31, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 36);
             this.label1.TabIndex = 1;
@@ -71,7 +71,7 @@
             // nimi_txt
             // 
             this.nimi_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nimi_txt.Location = new System.Drawing.Point(249, 25);
+            this.nimi_txt.Location = new System.Drawing.Point(154, 25);
             this.nimi_txt.Multiline = true;
             this.nimi_txt.Name = "nimi_txt";
             this.nimi_txt.Size = new System.Drawing.Size(183, 36);
@@ -80,7 +80,7 @@
             // perenimi_txt
             // 
             this.perenimi_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.perenimi_txt.Location = new System.Drawing.Point(249, 80);
+            this.perenimi_txt.Location = new System.Drawing.Point(154, 80);
             this.perenimi_txt.Multiline = true;
             this.perenimi_txt.Name = "perenimi_txt";
             this.perenimi_txt.Size = new System.Drawing.Size(183, 36);
@@ -91,7 +91,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label2.Location = new System.Drawing.Point(126, 80);
+            this.label2.Location = new System.Drawing.Point(31, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 36);
             this.label2.TabIndex = 3;
@@ -101,7 +101,7 @@
             // kasutaja_txt
             // 
             this.kasutaja_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kasutaja_txt.Location = new System.Drawing.Point(249, 135);
+            this.kasutaja_txt.Location = new System.Drawing.Point(154, 135);
             this.kasutaja_txt.Multiline = true;
             this.kasutaja_txt.Name = "kasutaja_txt";
             this.kasutaja_txt.Size = new System.Drawing.Size(183, 36);
@@ -112,7 +112,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label3.Location = new System.Drawing.Point(126, 135);
+            this.label3.Location = new System.Drawing.Point(31, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 36);
             this.label3.TabIndex = 5;
@@ -122,7 +122,7 @@
             // parool_txt
             // 
             this.parool_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.parool_txt.Location = new System.Drawing.Point(249, 190);
+            this.parool_txt.Location = new System.Drawing.Point(154, 190);
             this.parool_txt.Multiline = true;
             this.parool_txt.Name = "parool_txt";
             this.parool_txt.PasswordChar = '*';
@@ -134,7 +134,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label5.Location = new System.Drawing.Point(126, 190);
+            this.label5.Location = new System.Drawing.Point(31, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 36);
             this.label5.TabIndex = 8;
@@ -145,7 +145,7 @@
             // 
             this.muuja_rbt.AutoSize = true;
             this.muuja_rbt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.muuja_rbt.Location = new System.Drawing.Point(239, 297);
+            this.muuja_rbt.Location = new System.Drawing.Point(144, 297);
             this.muuja_rbt.Name = "muuja_rbt";
             this.muuja_rbt.Size = new System.Drawing.Size(70, 24);
             this.muuja_rbt.TabIndex = 10;
@@ -157,7 +157,7 @@
             // 
             this.omanik_rbt.AutoSize = true;
             this.omanik_rbt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.omanik_rbt.Location = new System.Drawing.Point(341, 297);
+            this.omanik_rbt.Location = new System.Drawing.Point(246, 297);
             this.omanik_rbt.Name = "omanik_rbt";
             this.omanik_rbt.Size = new System.Drawing.Size(81, 24);
             this.omanik_rbt.TabIndex = 11;
@@ -168,7 +168,7 @@
             // parool2_txt
             // 
             this.parool2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.parool2_txt.Location = new System.Drawing.Point(249, 246);
+            this.parool2_txt.Location = new System.Drawing.Point(154, 246);
             this.parool2_txt.Multiline = true;
             this.parool2_txt.Name = "parool2_txt";
             this.parool2_txt.PasswordChar = '*';
@@ -180,7 +180,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label4.Location = new System.Drawing.Point(126, 246);
+            this.label4.Location = new System.Drawing.Point(31, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 36);
             this.label4.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(597, 361);
             this.Controls.Add(this.parool2_txt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.omanik_rbt);
