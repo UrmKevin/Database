@@ -87,13 +87,13 @@
             this.Toode_pbx.TabIndex = 25;
             this.Toode_pbx.TabStop = false;
             // 
-            // Toode_lbl
+            // KõikHind_lbl
             // 
             this.KõikHind_lbl.BackColor = System.Drawing.Color.White;
             this.KõikHind_lbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.KõikHind_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.KõikHind_lbl.Location = new System.Drawing.Point(575, 214);
-            this.KõikHind_lbl.Name = "Toode_lbl";
+            this.KõikHind_lbl.Name = "KõikHind_lbl";
             this.KõikHind_lbl.Size = new System.Drawing.Size(209, 28);
             this.KõikHind_lbl.TabIndex = 33;
             this.KõikHind_lbl.Text = "Mitte midagi...";
