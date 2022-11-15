@@ -38,7 +38,7 @@ namespace Database
                             kontroll = true;
                             this.Hide();
                             Warehouse omanik1 = new Warehouse();
-                            Cassa omanik2 = new Cassa();
+                            Kassa1 omanik2 = new Kassa1();
                             omanik1.Show();
                             omanik2.Show();
                         }
@@ -46,7 +46,7 @@ namespace Database
                         {
                             kontroll = true;
                             this.Hide();
-                            Cassa kassa = new Cassa();
+                            Kassa1 kassa = new Kassa1();
                             kassa.Show();
                         }
                     }

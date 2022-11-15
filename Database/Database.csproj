@@ -64,17 +64,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kassa2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kassa2.Designer.cs">
+      <DependentUpon>Kassa2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Warehouse.Designer.cs">
       <DependentUpon>Warehouse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cassa.cs">
+    <Compile Include="Kassa1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cassa.Designer.cs">
-      <DependentUpon>Cassa.cs</DependentUpon>
+    <Compile Include="Kassa1.Designer.cs">
+      <DependentUpon>Kassa1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -90,11 +102,14 @@
     <Compile Include="Registr.Designer.cs">
       <DependentUpon>Registr.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse.resx">
       <DependentUpon>Warehouse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cassa.resx">
-      <DependentUpon>Cassa.cs</DependentUpon>
+    <EmbeddedResource Include="Kassa1.resx">
+      <DependentUpon>Kassa1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -136,6 +151,10 @@
     <Content Include="Images\about.png" />
     <Content Include="Images\Pepsi.png" />
     <Content Include="Images\piim.png" />
+    <Content Include="Kat_Images\Ajatooded.jpg" />
+    <Content Include="Kat_Images\Ehitusmaterjalid.jpg" />
+    <Content Include="Kat_Images\Mänguasjad.jpg" />
+    <Content Include="Kat_Images\Toidutooded.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
