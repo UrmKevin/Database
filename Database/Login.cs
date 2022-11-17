@@ -36,28 +36,20 @@ namespace Database
                         if (kasutaja_txt.Text == reader["Kasutajanimi"].ToString() && parool_txt.Text == reader["Parool"].ToString() && "Omanik" == reader["Rolli"].ToString())
                         {
                             kontroll = true;
+                            Omanik omanik = new Omanik();
                             this.Hide();
-                            Warehouse omanik1 = new Warehouse();
-                            Kassa1 omanik2 = new Kassa1();
-                            omanik1.Show();
-                            omanik2.Show();
+                            omanik.Show();
+                            break;
                         }
                         else if (kasutaja_txt.Text == reader["Kasutajanimi"].ToString() && parool_txt.Text == reader["Parool"].ToString() && "Müüja" == reader["Rolli"].ToString())
                         {
                             kontroll = true;
-                            this.Hide();
-                            Kassa1 kassa = new Kassa1();
-                            kassa.Show();
+                            //Muuja muuja = new Muuja();
+                            //muuja.Show();
                         }
                     }
                     connect.Close();
-                    if (kontroll)
-                    {
-
-
-                        MessageBox.Show("logined!");
-                    }
-                    else
+                    if (kontroll == false)
                     {
                         MessageBox.Show("There is no User with this data!");
                     }
