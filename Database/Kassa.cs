@@ -17,7 +17,7 @@ namespace Database
 {
     public partial class Kassa : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\source\repos\TARpv21_Urm\Database\Database\AppData\Tooded_DB.mdf;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\source\repos\Database\Database\AppData\Tooded_DB.mdf;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adapter, adapter_kat;
         List<string> Tooded_list = new List<string>();

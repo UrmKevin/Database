@@ -206,7 +206,7 @@
             this.Hind_txt.Size = new System.Drawing.Size(152, 20);
             this.Hind_txt.TabIndex = 18;
             // 
-            // Form1
+            // Warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,8 +227,8 @@
             this.Controls.Add(this.Hind_lbl);
             this.Controls.Add(this.Toode_lbl);
             this.Controls.Add(this.Toode_txt);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Warehouse";
+            this.Text = "Ladu";
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Kogus_txt)).EndInit();

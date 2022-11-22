@@ -216,7 +216,7 @@
             this.Korv_lbx.Size = new System.Drawing.Size(209, 160);
             this.Korv_lbx.TabIndex = 47;
             // 
-            // Form2
+            // Kassa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -237,8 +237,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Toode_pbx);
             this.Controls.Add(this.Arve_btn);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Kassa";
+            this.Text = "Kassa";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Toode_pbx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Kogus_txt)).EndInit();

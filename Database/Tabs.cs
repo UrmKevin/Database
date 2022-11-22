@@ -13,7 +13,7 @@ namespace Database
 {
     public partial class Tabs : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\Source\Repos\Database\Database\AppData\Tooded_DB.mdf;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\source\repos\Database\Database\AppData\Tooded_DB.mdf;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter adapter_toode, adapter_kat, failinimi_adap;
         TabControl kategooriad;
